@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  id: String!
+  author: String!
+  content: String!
+}
+
+type User {
+  id: ID!
+  username: String!
+  password: String!
+}
+
+type Query {
+  post(id: String!): Post!
+  posts(limit: Int = 5): [Post!]!
+}
+
+type Mutation {
+  createPost(newPostData: NewPostInput!): Post!
+  register(accountData: CreateUserInput!): User!
+}
+
+input NewPostInput {
+  author: String!
+  content: String!
+}
+
+input CreateUserInput {
+  username: String!
+  password: String!
+}
